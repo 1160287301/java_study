@@ -10,4 +10,8 @@ public class T
     public int sum(int a, int b) {
         return a + b;
     }
+
+    public int devide(int a, int b) {
+        return a / b ;
+    }
 }
