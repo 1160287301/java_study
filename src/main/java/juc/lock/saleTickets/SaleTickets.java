@@ -6,6 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @Description : TODO      模拟卖票员买票程序
  *                          多个卖票员同时卖30张票
+ *                          现场 操作 资源类
  * @Author :    yangguang
  * @Date :      2019/11/18
  */
@@ -40,8 +41,8 @@ class Ticket
 public class SaleTickets {
     public static void main(String[] args) {
         Ticket ticket = new Ticket();
-        new Thread(()->{for (int i = 0 ;i < 40; ++i){ticket.sale();}},"A").start();
-        new Thread(()->{for (int i = 0 ;i < 40; ++i){ticket.sale();}},"B").start();
-        new Thread(()->{for (int i = 0 ;i < 40; ++i){ticket.sale();}},"C").start();
+        new Thread(()->{for (int i = 0 ;i < 40; ++i) ticket.sale();},"A").start();
+        new Thread(()->{for (int i = 0 ;i < 40; ++i) ticket.sale();},"B").start();
+        new Thread(()->{for (int i = 0 ;i < 40; ++i) ticket.sale();},"C").start();
     }
 }
