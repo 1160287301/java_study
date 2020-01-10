@@ -2,7 +2,10 @@ package juc.collections;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Vector;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @Description : TODO      并发容器安全之List
@@ -22,19 +25,24 @@ public class ListDemo {
      *
      *
      * 如何创建线程安全的 List:
-     * 1:使用集合工具类Collections的 synchronizedList把普通的List转为线程安全的List,但是不建议使用,
+     * 1:使用集合工具类 Collections 的 synchronizedList把普通的List转为线程安全的List,但是不建议使用,
      * 因为它底层是返回了Collections内部的一个List实现类,这个实现类的方法仍然使用synchronized,说白了,与Vector相似
      *
      * 2:使用写时复制类 CopyOnWriteArrayList,此类适合读多写少的场合,它的性能比Vector好的多,
-     *   它的读取方法没有使用加锁操作,而是在使用add,set等修改操作的时候将原内容和要修改的内容复制到新的副本中,
-     *   写完后,再将副本赋予原数据
+     *   往一个容器添加元素的时候,不直接往当前的容器 Object[] 添加,而是先将当前容器 object[] 进行 copy,
+     *   复制出一个新的容器 object[] newElements, 然后往新的容器 newElements 里面添加元素,添加完成之后,
+     *   再将原容器的指针指向新的容器 setArray(newElements); 这样做的好处是可以对 CopyOnWrite 容器进行并发的读,
+     *   而不需要加锁,因为当前容器不会添加任何元素. 所以 CopyOnWrite 容器也是一种读写分离的思想,读和写不同的容器
      *
      */
 
     //ArrayList线程不安全的demo
     public static void main(String[] args) throws Exception
     {
-        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>();
+//        List<Integer> list = new Vector<>();
+//        List<Integer> list = Collections.synchronizedList(new ArrayList<>());
+        List<Integer> list = new CopyOnWriteArrayList<>();
         Runnable run = ()->{
             list.add(5);
             System.out.println(list);
