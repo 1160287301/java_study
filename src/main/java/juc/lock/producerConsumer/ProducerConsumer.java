@@ -8,6 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Description : TODO       生产者和消费者
  * @Author :    yangguang
  * @Date :      2019/11/18
+ * 涉及多线程的调用判断,不能使用 if 判断,要用 while,防止虚假唤醒
  */
 
 
@@ -26,6 +27,7 @@ public class ProducerConsumer {
         try {
             while(number > 0)
             {
+                // 使用 while 后,如果某个线程在此次被唤醒,不会往下继续执行,而是会重新判断一次
                 this.wait();
             }
         }
