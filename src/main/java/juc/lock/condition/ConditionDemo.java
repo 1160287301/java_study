@@ -10,7 +10,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Date :      2019/11/18
  */
 public class ConditionDemo {
-
     /**
      *
      *  使用 Lock 和 Condition ,使3个线程顺序打印公共资源
