@@ -26,8 +26,8 @@ public class ClassLoaderDemo {
      *
      * 双亲委派机制:
      * 每一个类都有一个它对应的类加载器.
-     * 在加载类的时候,系统手写会判断当前类是否被加载过了,如果已经被加载,那么直接返回已被加载的类.
-     * 如果没有加载,手写会把加载的请求传递给它的父类加载器,这样一层一层,传递,最终会到顶级的BootStrapClassLoader,当父类加载器无法加载时,
+     * 在加载类的时候,系统首先会判断当前类是否被加载过了,如果已经被加载,那么直接返回已被加载的类.
+     * 如果没有加载,首先会把加载的请求传递给它的父类加载器,这样一层一层,传递,最终会到顶级的BootStrapClassLoader,当父类加载器无法加载时,
      * 才由自己处理.这样避免了已经加载过的类重复被加载
      *
      */
@@ -37,7 +37,7 @@ public class ClassLoaderDemo {
     {
         Object object = new Object();
         //因为Object是jdk的,所以由BootStrapClassLoader加载,而 BootStrapClassLoader 由 c++编写,这里打印null,代表 BootStrapClassLoader
-        System.out.println(object.getClass().getClassLoader());
+        System.out.println(object.getClass().getClassLoader());  // null
 
         //这里会抛出 NullPointException,因为BootStrapClassLoader已经是最顶级的类加载器了,不可能有parent了
 //        System.out.println(object.getClass().getClassLoader().getParent());
@@ -47,13 +47,13 @@ public class ClassLoaderDemo {
         ClassLoaderDemo myObject = new ClassLoaderDemo();
 
         //因为 ClassLoaderDemo 是我编写的属于此程序的类,所以由 AppClassLoader 加载
-        System.out.println(myObject.getClass().getClassLoader());
+        System.out.println(myObject.getClass().getClassLoader()); // sun.misc.Launcher$AppClassLoader@18b4aac2
 
         //获取 PlatformClassLoader
-        System.out.println(myObject.getClass().getClassLoader().getParent());
+        System.out.println(myObject.getClass().getClassLoader().getParent());  // sun.misc.Launcher$ExtClassLoader@61bbe9ba
 
         //获取 BootStrapClassLoader
-        System.out.println(myObject.getClass().getClassLoader().getParent().getParent());
+        System.out.println(myObject.getClass().getClassLoader().getParent().getParent()); // null
 
         //空指针异常
 //        System.out.println(myObject.getClass().getClassLoader().getParent().getParent().getParent());
