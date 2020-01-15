@@ -39,8 +39,9 @@ public class CallableDemo {
 
         //RunnableFuture接口实现了Runnable接口,代表它可以构造 Thread
         RunnableFuture<String> task = new FutureTask<>(call);
-
+        // java 内部有缓存,所以不会运行两次
         new Thread(task,"A").start();
+        new Thread(task,"B").start();
         //如果在 FutureTask还没有计算出结果的时候就去get,那么会阻塞线程,直到线程结果返回
         System.out.println(task.get());
     }
