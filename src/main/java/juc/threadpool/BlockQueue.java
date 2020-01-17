@@ -8,6 +8,14 @@ import java.util.concurrent.TimeUnit;
  * @Description : TODO           阻塞队列,线程池的核心
  * @Author :    yangguang
  * @Date :      2019/11/21
+ *
+ * ArrayBlockingQueue：由数组结构组成的有界阻塞队列。
+ * LinkedBlockingQueue：由链表结构组成的有界（但大小默认值为integer.MAX_VALUE）阻塞队列。
+ * PriorityBlockingQueue：支持优先级排序的无界阻塞队列。
+ * DelayQueue：使用优先级队列实现的延迟无界阻塞队列。
+ * SynchronousQueue：不存储元素的阻塞队列，也即单个元素的队列。
+ * LinkedTransferQueue：由链表组成的无界阻塞队列。
+ * LinkedBlockingDeque：由链表组成的双向阻塞队列。
  */
 public class BlockQueue {
 
