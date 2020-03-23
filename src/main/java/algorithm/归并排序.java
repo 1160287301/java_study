@@ -1,5 +1,9 @@
 package algorithm;
 
+/**
+ * 分而治之思想
+ * https://www.bilibili.com/video/BV1et411N7Ac?from=search&seid=17336327101598161138
+ */
 public class 归并排序 extends Template {
     private static Comparable[] aux; //归并所需的辅助数组
 

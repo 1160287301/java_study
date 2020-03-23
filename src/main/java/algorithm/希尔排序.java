@@ -1,5 +1,8 @@
 package algorithm;
 
+/**
+ * https://www.bilibili.com/video/BV1rE411g7rW?from=search&seid=7395911873342988440
+ */
 public class 希尔排序 extends Template {
 
     public static void sort() {
