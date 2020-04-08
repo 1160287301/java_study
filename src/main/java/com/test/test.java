@@ -9,7 +9,7 @@ public class test {
     public static void main(String[] args) {
         Map<String, Object> map = new HashedMap();
         map.put("id", 1l);
-
+        map.getOrDefault("id", "none");
 
     }
 }
