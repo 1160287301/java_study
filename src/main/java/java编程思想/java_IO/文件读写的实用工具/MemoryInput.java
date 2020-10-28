@@ -1,4 +1,4 @@
-package java编程思想.java_IO;
+package java编程思想.java_IO.文件读写的实用工具;
 
 import java.io.StringReader;
 
