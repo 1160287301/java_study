@@ -4,6 +4,14 @@ import java.io.*;
 import java.util.Enumeration;
 import java.util.zip.*;
 
+/**
+ * 支持 Zip 格式 的 Java 库 更加 全面。 利用 该 库 可以 方便 地保 存 多个 文件， 它 甚至 有一个 独立 的 类， 使得 读取 Zip 文件 更加 方便。
+ * 这个 类 库 使 用的 是 标准 Zip 格式， 所以 能 与 当前 那些 可通过 因 特 网 下载 的 压缩 工具 很好 地 协作。
+ * 下面 这个 例子 具有 与 前例 相同 的 形式， 但它 能 根据 需要 来处 理 任意 多个 命令行 参数。
+ * 另外， 它 显示 了 用 Checksum 类 来 计算 和 校验 文件 的 校验 和 的 方法。
+ * 一共 有 两种 Checksum 类型： Adler32（ 它 快 一些） 和 CRC32（ 慢 一些， 但 更 准确）。
+ *
+ */
 public class ZipCompress {
     public static void main(String[] args)
             throws IOException {
