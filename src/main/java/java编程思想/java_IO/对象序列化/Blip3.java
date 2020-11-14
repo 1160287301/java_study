@@ -2,22 +2,32 @@ package java编程思想.java_IO.对象序列化;
 
 //: io/Blip3.java
 // Reconstructing an externalizable object.
+
 import java.io.*;
 
+/**
+ * 下面 这个 例子 示范 了 如何 完整 保存 和 恢复 一个 Externalizable 对象：
+ */
 public class Blip3 implements Externalizable {
     private int i;
     private String s; // No initialization
+
     public Blip3() {
         System.out.println("Blip3 Constructor");
         // s, i not initialized
     }
+
     public Blip3(String x, int a) {
         System.out.println("Blip3(String x, int a)");
         s = x;
         i = a;
         // s & i initialized only in non-default constructor.
     }
-    public String toString() { return s + i; }
+
+    public String toString() {
+        return s + i;
+    }
+
     public void writeExternal(ObjectOutput out)
             throws IOException {
         System.out.println("Blip3.writeExternal");
@@ -25,13 +35,15 @@ public class Blip3 implements Externalizable {
         out.writeObject(s);
         out.writeInt(i);
     }
+
     public void readExternal(ObjectInput in)
             throws IOException, ClassNotFoundException {
         System.out.println("Blip3.readExternal");
         // You must do this:
-        s = (String)in.readObject();
+        s = (String) in.readObject();
         i = in.readInt();
     }
+
     public static void main(String[] args)
             throws IOException, ClassNotFoundException {
         System.out.println("Constructing objects:");
@@ -46,7 +58,7 @@ public class Blip3 implements Externalizable {
         ObjectInputStream in = new ObjectInputStream(
                 new FileInputStream("Blip3.out"));
         System.out.println("Recovering b3:");
-        b3 = (Blip3)in.readObject();
+        b3 = (Blip3) in.readObject();
         System.out.println(b3);
     }
 } /* Output:
