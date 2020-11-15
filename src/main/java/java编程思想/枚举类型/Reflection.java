@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;//: enumerated/Reflection.java
+package java编程思想.枚举类型;//: enumerated/Reflection.java
 // Analyzing enums using reflection.
 
 import java编程思想.java_IO.进程控制.OSExecute;

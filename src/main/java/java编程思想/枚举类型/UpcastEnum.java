@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;//: enumerated/UpcastEnum.java
+package java编程思想.枚举类型;//: enumerated/UpcastEnum.java
 // No values() method if you upcast an enum
 
 enum Search {HITHER, YON}

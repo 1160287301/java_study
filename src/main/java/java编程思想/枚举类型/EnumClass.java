@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;
+package java编程思想.枚举类型;
 
 //: enumerated/EnumClass.java
 // Capabilities of the Enum class

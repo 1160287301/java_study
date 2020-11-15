@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;//: enumerated/OzWitch.java
+package java编程思想.枚举类型;//: enumerated/OzWitch.java
 // The witches in the land of Oz.
 
 

@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;
+package java编程思想.枚举类型;
 
 /**
  * 覆盖 toSring() 方法， 给我 们 提供 了 另一种 方式 来 为 枚举 实例 生成 不同 的 字符串 描述 信息。

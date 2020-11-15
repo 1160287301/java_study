@@ -1,4 +1,4 @@
-package java编程思想.java_IO.枚举类型;//: enumerated/TrafficLight.java
+package java编程思想.枚举类型;//: enumerated/TrafficLight.java
 // Enums in switch statements.
 
 // Define an enum type:

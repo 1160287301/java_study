@@ -72,11 +72,19 @@
             <artifactId>rocketmq-client</artifactId>
             <version>4.3.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/xom/xom -->
         <dependency>
             <groupId>xom</groupId>
             <artifactId>xom</artifactId>
             <version>1.2.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.20.0-GA</version>
+        </dependency>
+
 
     </dependencies>
 

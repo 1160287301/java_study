@@ -1,8 +1,8 @@
 //: enumerated/Burrito.java
-package java编程思想.java_IO.枚举类型;
+package java编程思想.枚举类型;
 
 
-import static java编程思想.java_IO.枚举类型.Spiciness.*;
+import static java编程思想.枚举类型.Spiciness.*;
 
 /**
  * 使用 static import 能够 将 enum 实例 的 标识符 带入 当前 的 命名 空间， 所以 无需 再用 enum 类型 来 修饰 enum 实例。
