@@ -4,6 +4,9 @@ package java编程思想.枚举类型.多路分发;
 
 import static java编程思想.枚举类型.多路分发.Outcome.*;
 
+/**
+ * 常量 相关 的 方法 允许 我们 为 每个 enum 实例 提供 方法 的 不同 实现， 这使 得 常量 相关 的 方法 似乎是 实现 多路 分发 的 完美 解决 方案。 不过， 通过 这种 方式， enum 实例 虽然 可以 具有 不同 的 行为， 但它 们 仍然 不是 类型， 不能 将其 作为 方法 签名 中的 参数 类型 来 使用。 最好 的 办法 是将 enum 用在 switch 语句 中， 见 下例：
+ */
 public enum RoShamBo3 implements Competitor<RoShamBo3> {
     PAPER {
         public Outcome compete(RoShamBo3 it) {
