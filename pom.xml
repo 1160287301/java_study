@@ -85,6 +85,14 @@
             <version>3.20.0-GA</version>
         </dependency>
 
+        <dependency>
+            <groupId>apt</groupId>
+            <artifactId>apt</artifactId>
+            <version>0.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/apt-mirror-api-0.1.jar</systemPath>
+        </dependency>
+
 
     </dependencies>
 
