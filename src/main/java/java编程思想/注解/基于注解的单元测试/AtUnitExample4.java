@@ -10,6 +10,11 @@ import java.util.*;
 
 import static java编程思想.net.mindview.util.Print.print;
 
+/**
+ * 有的时候，我们需要向单元测试中添加一些额外的域。这时可以使用@TestProperty注解，由它注解的域表示只在单元测试中使用（因此，在我们将产品发布给客户之前，他们应该被删除掉）。在下面的例子中，一个String通过String.split()方法被拆散了，从其中读取一个值，这个值将被用来生成测试对象：
+ *
+ * @TestProperty也可以用来标记那些只在测试中使用的方法，而他们本身又不是测试方法。注意，这个程序依赖于测试执行的顺序，这可不是一个好的实践。
+ */
 public class AtUnitExample4 {
     static String theory = "All brontosauruses " +
             "are thin at one end, much MUCH thicker in the " +

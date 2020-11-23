@@ -10,6 +10,10 @@ import java编程思想.net.mindview.atunit.TestProperty;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * 如果你的测试对象需要执行某些初始化工作，并且使用完毕后还需要进行某些清理工作，那么可以选择使用static@TestObjectCleanup方法，当测试对象使用结束后，该方法会为你执行清理工作。在下面的例子中，@TestObjectCreate为每个测试对象打开了一个文件，因此必须在丢弃测试对象的时候关闭该文件：
+ * 从输出中我们可以看到，清理方法会在每个测试结束后自动运行。
+ */
 public class AtUnitExample5 {
     private String text;
 
