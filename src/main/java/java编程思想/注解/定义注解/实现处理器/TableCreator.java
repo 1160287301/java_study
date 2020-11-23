@@ -1,12 +1,12 @@
 //: annotations/database/TableCreator.java
 // Reflection-based annotation processor.
 // {Args: annotations.database.Member}
-package java编程思想.注解.基本语法.定义注解.实现处理器;
+package java编程思想.注解.定义注解.实现处理器;
 
-import java编程思想.注解.基本语法.定义注解.生成外部文件.Constraints;
-import java编程思想.注解.基本语法.定义注解.生成外部文件.DBTable;
-import java编程思想.注解.基本语法.定义注解.生成外部文件.SQLInteger;
-import java编程思想.注解.基本语法.定义注解.生成外部文件.SQLString;
+import java编程思想.注解.定义注解.生成外部文件.Constraints;
+import java编程思想.注解.定义注解.生成外部文件.DBTable;
+import java编程思想.注解.定义注解.生成外部文件.SQLInteger;
+import java编程思想.注解.定义注解.生成外部文件.SQLString;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

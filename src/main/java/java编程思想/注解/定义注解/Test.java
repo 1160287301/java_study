@@ -1,4 +1,4 @@
-package java编程思想.注解.基本语法.定义注解;
+package java编程思想.注解.定义注解;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

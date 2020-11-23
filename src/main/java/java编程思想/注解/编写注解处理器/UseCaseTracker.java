@@ -1,7 +1,7 @@
-package java编程思想.注解.基本语法.编写注解处理器;//: annotations/UseCaseTracker.java
+package java编程思想.注解.编写注解处理器;//: annotations/UseCaseTracker.java
 
-import java编程思想.注解.基本语法.定义注解.PasswordUtils;
-import java编程思想.注解.基本语法.定义注解.UseCase;
+import java编程思想.注解.定义注解.PasswordUtils;
+import java编程思想.注解.定义注解.UseCase;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

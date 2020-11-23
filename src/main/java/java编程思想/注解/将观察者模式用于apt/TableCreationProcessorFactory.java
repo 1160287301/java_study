@@ -3,7 +3,7 @@
 // {Exec: apt -factory
 // annotations.database.TableCreationProcessorFactory
 // database/Member.java -s database}
-package java编程思想.注解.基本语法.定义注解.生成外部文件;
+package java编程思想.注解.将观察者模式用于apt;
 
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
@@ -13,6 +13,10 @@ import com.sun.mirror.declaration.ClassDeclaration;
 import com.sun.mirror.declaration.FieldDeclaration;
 import com.sun.mirror.declaration.TypeDeclaration;
 import com.sun.mirror.util.SimpleDeclarationVisitor;
+import java编程思想.注解.定义注解.生成外部文件.Constraints;
+import java编程思想.注解.定义注解.生成外部文件.DBTable;
+import java编程思想.注解.定义注解.生成外部文件.SQLInteger;
+import java编程思想.注解.定义注解.生成外部文件.SQLString;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -23,8 +27,7 @@ import static com.sun.mirror.util.DeclarationVisitors.NO_OP;
 import static com.sun.mirror.util.DeclarationVisitors.getDeclarationScanner;
 
 
-public class TableCreationProcessorFactory
-        implements AnnotationProcessorFactory {
+public class TableCreationProcessorFactory implements AnnotationProcessorFactory {
     public AnnotationProcessor getProcessorFor(
             Set<AnnotationTypeDeclaration> atds,
             AnnotationProcessorEnvironment env) {
@@ -43,8 +46,7 @@ public class TableCreationProcessorFactory
         return Collections.emptySet();
     }
 
-    private static class TableCreationProcessor
-            implements AnnotationProcessor {
+    private static class TableCreationProcessor implements AnnotationProcessor {
         private final AnnotationProcessorEnvironment env;
         private String sql = "";
 

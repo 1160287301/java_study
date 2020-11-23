@@ -1,4 +1,4 @@
-package java编程思想.注解.基本语法.元注解;
+package java编程思想.注解.元注解;
 
 public class MetaClass {
     /*

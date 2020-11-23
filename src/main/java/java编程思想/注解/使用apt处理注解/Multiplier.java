@@ -1,6 +1,6 @@
 //: annotations/Multiplier.java
 // APT-based annotation processing.
-package java编程思想.注解.基本语法.使用apt处理注解;
+package java编程思想.注解.使用apt处理注解;
 
 /**
  * java编程思想.注解.基本语法.使用apt处理注解.ExtractInterface 的 RetentionPolicy是SOURCE，因为当我们从一个使用了该注解的类中抽取出接口之后，没有必要再保留这些注解信息。下面的类有一个公共方法，我们将会把它抽取到一个有用接口中：

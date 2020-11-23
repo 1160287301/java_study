@@ -1,5 +1,5 @@
 //: annotations/database/SQLInteger.java
-package java编程思想.注解.基本语法.定义注解.生成外部文件;
+package java编程思想.注解.定义注解.生成外部文件;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

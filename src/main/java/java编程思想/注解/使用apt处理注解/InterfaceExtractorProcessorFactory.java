@@ -1,6 +1,6 @@
 //: annotations/InterfaceExtractorProcessorFactory.java
 // APT-based annotation processing.
-package java编程思想.注解.基本语法.使用apt处理注解;
+package java编程思想.注解.使用apt处理注解;
 
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;

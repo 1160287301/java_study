@@ -1,4 +1,4 @@
-package java编程思想.注解.基本语法.定义注解;//: annotations/PasswordUtils.java
+package java编程思想.注解.定义注解;//: annotations/PasswordUtils.java
 
 import java.util.List;
 
