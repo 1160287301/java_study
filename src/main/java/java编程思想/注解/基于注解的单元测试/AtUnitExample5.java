@@ -2,10 +2,10 @@
 package java编程思想.注解.基于注解的单元测试;
 
 import java编程思想.java_IO.进程控制.OSExecute;
-import java编程思想.net.mindview.atunit.Test;
-import java编程思想.net.mindview.atunit.TestObjectCleanup;
-import java编程思想.net.mindview.atunit.TestObjectCreate;
-import java编程思想.net.mindview.atunit.TestProperty;
+import java编程思想.注解.基于注解的单元测试.实现unit.Test;
+import java编程思想.注解.基于注解的单元测试.实现unit.TestObjectCleanup;
+import java编程思想.注解.基于注解的单元测试.实现unit.TestObjectCreate;
+import java编程思想.注解.基于注解的单元测试.实现unit.TestProperty;
 
 import java.io.IOException;
 import java.io.PrintWriter;

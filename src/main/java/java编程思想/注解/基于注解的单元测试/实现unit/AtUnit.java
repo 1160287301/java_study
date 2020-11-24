@@ -1,7 +1,7 @@
 //: net/mindview/atunit/AtUnit.java
 // An annotation-based unit-test framework.
 // {RunByHand}
-package java编程思想.net.mindview.atunit;
+package java编程思想.注解.基于注解的单元测试.实现unit;
 
 import java编程思想.net.mindview.util.BinaryFile;
 import java编程思想.net.mindview.util.ProcessFiles;
@@ -16,6 +16,11 @@ import java.util.List;
 import static java编程思想.net.mindview.util.Print.print;
 import static java编程思想.net.mindview.util.Print.printnb;
 
+/**
+ * 要 实现 该 系统， 并 运行 测试， 我们 还需 使用 反射 机制 来 抽取 注解。 下面 这个 程序 通过 注解 中的 信息， 决定 如何 构造 测试 对象， 并在 测试 对象 上 运行 测试。 正是 由于 注解 的 帮助， 这个 程序 才 如此 短小 而 直接：
+ * <p>
+ * AtUnit. java 使用 了 net. mindview. util 中的 ProcessFiles 工具。 这个 类 还 实现 了 ProcessFiles. Strategy 接口， 该 接口 包含 process() 方法。 如此 一来， 便 可以 将 一个 AtUnit 实例 传给 ProcessFiles 的 构造 器。 ProcessFiles 构造 器 的 第二个 参数 告诉 ProcessFiles 查找 所有 扩展 名为 class 的 文件。 如果 你 没有 提供 命令行 参数， 这个 程序 会 遍历 当前 目录。 你也 可 以为 其 提供 多个 参数， 可以 是 类 文件（ 带有 或 不带. class 扩展名 都可）， 或者是 一些 目录。 由于@ Unit 将会 自动 找到 可 测试 的 类 和 方法， 所以 没有“ 套 件” 机制 的 必要[ 9]。
+ */
 public class AtUnit implements ProcessFiles.Strategy {
     static Class<?> testClass;
     static List<String> failedTests = new ArrayList<String>();
@@ -121,6 +126,25 @@ public class AtUnit implements ProcessFiles.Strategy {
         if (!m.getReturnType().equals(testClass))
             throw new RuntimeException("@TestObjectCreate " +
                     "must return instance of Class to be tested");
+        /*
+        * JAVA 反射机制中，Field的getModifiers()方法返回int类型值表示该字段的修饰符。
+        其中，该修饰符是java.lang.reflect.Modifier的静态属性。
+        对应表如下：
+            PUBLIC: 1
+            PRIVATE: 2
+            PROTECTED: 4
+            STATIC: 8
+            FINAL: 16
+            SYNCHRONIZED: 32
+            VOLATILE: 64
+            TRANSIENT: 128
+            NATIVE: 256
+            INTERFACE: 512
+            ABSTRACT: 1024
+            STRICT: 2048
+        *
+        *
+        * */
         if ((m.getModifiers() &
                 Modifier.STATIC) < 1)
             throw new RuntimeException("@TestObjectCreate " +

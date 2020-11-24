@@ -2,8 +2,8 @@
 package java编程思想.注解.基于注解的单元测试;
 
 import java编程思想.java_IO.进程控制.OSExecute;
-import java编程思想.net.mindview.atunit.Test;
-import java编程思想.net.mindview.atunit.TestObjectCreate;
+import java编程思想.注解.基于注解的单元测试.实现unit.Test;
+import java编程思想.注解.基于注解的单元测试.实现unit.TestObjectCreate;
 
 /**
  * 对每一个单元测试而言，@Unit都会用默认的构造器，为该测试所属的类创建出一个新的实例。并在此新创建的对象上运行测试，然后丢弃该对象，以避免对其他测试产生副作用。如此创建对象导致我们依赖于类的默认构造器。如果你的类没有默认构造器，或者新对象需要复杂的构造过程，那么你可以创建一个static方法专门负责构造对象，然后用@TestObjectCreaet注解将该方法标记出来，就像这样：

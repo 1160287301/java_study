@@ -1,6 +1,6 @@
 //: net/mindview/atunit/TestProperty.java
 // The @Unit @TestProperty tag.
-package java编程思想.net.mindview.atunit;
+package java编程思想.注解.基于注解的单元测试.实现unit;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
