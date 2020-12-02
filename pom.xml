@@ -93,6 +93,19 @@
             <systemPath>${project.basedir}/libs/apt-mirror-api-0.1.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql</artifactId>
+            <version>8.0.22</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/mysql-connector-java-8.0.22.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sensorsdata.analytics.javasdk</groupId>
+            <artifactId>SensorsAnalyticsSDK</artifactId>
+            <version>3.1.16</version>
+        </dependency>
 
     </dependencies>
 
