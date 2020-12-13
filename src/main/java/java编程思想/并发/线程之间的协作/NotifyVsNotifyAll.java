@@ -7,6 +7,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 class Blocker {
+    /**
+     * Blocker.waitingCall()非常简单，以至于在本例中，你只需声明for（；；）而不是while（！Thread.interrupted()）就可以达到相同的效果，因为在本例中，由于异常而离开循环和通过检查interrupted()标志离开循环是没有任何区别的——在两种情况下都要执行相同的代码。但是，事实上，这个示例选择了检查interrupted()，因为存在着两种离开循环的方式。如果在以后的某个时刻，你决定要在循环中添加更多的代码，那么如果没有覆盖从这个循环中退出的这两条路径，就会产生引入错误的风险。
+     */
     synchronized void waitingCall() {
         try {
             while (!Thread.interrupted()) {

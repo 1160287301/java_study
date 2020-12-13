@@ -10,7 +10,7 @@ import static java编程思想.net.mindview.util.Print.print;
 import static java编程思想.net.mindview.util.Print.printnb;
 
 
-class Car {
+class Car2 {
     private boolean flag = false;
 
     public synchronized void producer() {
@@ -34,12 +34,13 @@ class Car {
         while (flag == true)
             wait();
     }
+
 }
 
 class FlagOn implements Runnable {
-    private Car car;
+    private Car2 car;
 
-    public FlagOn(Car c) {
+    public FlagOn(Car2 c) {
         car = c;
     }
 
@@ -60,9 +61,9 @@ class FlagOn implements Runnable {
 }
 
 class FlagOff implements Runnable {
-    private Car car;
+    private Car2 car;
 
-    public FlagOff(Car c) {
+    public FlagOff(Car2 c) {
         car = c;
     }
 
@@ -84,7 +85,7 @@ class FlagOff implements Runnable {
 
 public class WaxOMatic {
     public static void main(String[] args) throws Exception {
-        Car car = new Car();
+        Car2 car = new Car2();
         ExecutorService exec = Executors.newCachedThreadPool();
         exec.execute(new FlagOn(car));
         exec.execute(new FlagOff(car));
