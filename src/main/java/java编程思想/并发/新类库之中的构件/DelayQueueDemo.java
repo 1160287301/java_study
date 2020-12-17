@@ -14,13 +14,11 @@ class DelayedTask implements Runnable, Delayed {
     private final int id = counter++;
     private final int delta;
     private final long trigger;
-    protected static List<DelayedTask> sequence =
-            new ArrayList<DelayedTask>();
+    protected static List<DelayedTask> sequence = new ArrayList<DelayedTask>();
 
     public DelayedTask(int delayInMilliseconds) {
         delta = delayInMilliseconds;
-        trigger = System.nanoTime() +
-                NANOSECONDS.convert(delta, MILLISECONDS);
+        trigger = System.nanoTime() + NANOSECONDS.convert(delta, MILLISECONDS);
         sequence.add(this);
     }
 
@@ -95,8 +93,7 @@ public class DelayQueueDemo {
     public static void main(String[] args) {
         Random rand = new Random(47);
         ExecutorService exec = Executors.newCachedThreadPool();
-        DelayQueue<DelayedTask> queue =
-                new DelayQueue<DelayedTask>();
+        DelayQueue<DelayedTask> queue = new DelayQueue<DelayedTask>();
         // Fill with tasks that have random delays:
         for (int i = 0; i < 20; i++)
             queue.put(new DelayedTask(rand.nextInt(5000)));
