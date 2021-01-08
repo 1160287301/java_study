@@ -16,4 +16,11 @@ public class AppTest {
         System.out.println("shouldAnswerWithTrueshouldAnswerWithTrueshouldAnswerWithTrueshouldAnswerWithTrue");
         assertTrue(true);
     }
+
+
+    @Test
+    public void test1() {
+        System.out.println(2 << 1);
+    }
+
 }
